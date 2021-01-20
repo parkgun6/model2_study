@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+D:\MyStudy\webws\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2186738437.index
+777296467.index
+4093363781.index
+2698738690.index
+1239062954.index
+2873614797.index
+3711718397.index
+419743151.index
