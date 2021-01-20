@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-D:\MyStudy\webws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2442294856.index
-\w1\src
-D:\MyStudy\webws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3711718397.index
-\store\src
-D:\MyStudy\webws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2500609140.index
-\w1\src
