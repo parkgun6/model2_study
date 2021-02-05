@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Login Page</h1>
+	<img alt="" src="temp">
 	<form action="loginAction.jsp" method = "post">
 	<input type="text" name="mid">
 	<button>enter</button>

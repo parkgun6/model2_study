@@ -29,35 +29,41 @@
 	</tbody>
 </table>
 
-<form action="/board/list" method="get">
+<%-- <form action="/board/list" method="get">
+게시글수 조정하기
+	<input type="${pageMaker.pageInfo.perSheet}" name="perSheet">
+	<button>enter</button> --%>
 	
-	<SELECT  NAME=sltSample SIZE=1>
-        <OPTION type="${pageMaker.pageInfo.perSheet}" VALUE=10 SELECTED>10</OPTION>
-        <OPTION type="${pageMaker.pageInfo.perSheet}" VALUE=20>20</OPTION>
-        <OPTION type="${pageMaker.pageInfo.perSheet}" VALUE=30>30</OPTION>
-        <OPTION type="${pageMaker.pageInfo.perSheet}" VALUE=40 >40</OPTION>
-    
-    </SELECT>
-	<INPUT TYPE=SUBMIT VALUE="perSheet">
+	
+<select
+	onChange="self.location='/board/list?page=1&perSheet='+this.value">
+	<option value="--">----</option>
+	<option value="10" ${pageMaker.pageInfo.perSheet ==10? "selected":"" }>10개씩열기</option>
+	<option value="20" ${pageMaker.pageInfo.perSheet ==20? "selected":"" }>20개씩열기</option>
+	<option value="30" ${pageMaker.pageInfo.perSheet ==30? "selected":"" }>30개씩열기</option>
+	<option value="40" ${pageMaker.pageInfo.perSheet ==40? "selected":"" }>40개씩열기</option>
+	<option value="50" ${pageMaker.pageInfo.perSheet ==50? "selected":"" }>50개씩열기</option>
 
- <ul class="pagination">
+</select>
+
+<ul class="pagination">
     <c:if test="${pageMaker.prev }">
     <li class="page-item">
-      <a class="page-link" href="/board/list?page=${pageMaker.start -1}&perSheet=${pageMaker.pageInfo.perSheet }" tabindex="-1">Previous</a>
+      <a class="page-link" href="/board/list?${pageMaker.getLink(pageMaker.start -1)}" tabindex="-1">Previous</a>
     </li>
     </c:if>
     
     <c:forEach begin="${pageMaker.start}" end="${pageMaker.end}" var="num">
-    <li class="page-item ${num == pageMaker.pageInfo.page ? 'active' :''}"><a class="page-link" href="/board/list?page=${num}&perSheet=${pageMaker.pageInfo.perSheet }">${num}</a></li>
+    <li class="page-item ${num == pageMaker.pageInfo.page ? 'active' :''}"><a class="page-link" href="/board/list?${pageMaker.getLink(num)}">${num}</a></li>
     </c:forEach>
     
     <c:if test="${pageMaker.next }">
     <li class="page-item">
-      <a class="page-link" href="/board/list?page=${pageMaker.end  + 1}&perSheet=${pageMaker.pageInfo.perSheet }">Next</a>
+      <a class="page-link" href="/board/list?${pageMaker.getLink(pageMaker.end+1)}">Next</a>
     </li>
     </c:if>
   </ul>
-</form>
+<!-- </form> -->
 
 
 
